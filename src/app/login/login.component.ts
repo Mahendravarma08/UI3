@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Routes } from '@angular/router';
+import { Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +8,7 @@ import { Routes } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router) { }
   loginform!: FormGroup;
   ngOnInit() {
     console.log('HI')
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   register() {
-    console.log("HIi")
+    this.router.navigate(['/signup']);
   }
 
 }
